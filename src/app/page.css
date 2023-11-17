@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Grand+Hotel&family=Work+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Grand+Hotel&family=Work+Sans:wght@300&display=swap');
+
+.font{
+font-family: 'Dancing Script',
+        cursive;
+    font-family: 'Grand Hotel',
+        cursive;
+    font-family: 'Work Sans',
+        sans-serif;
+    font-family: 'Billabong',cursive;
+    font-family:'Instagram Sans';
+
+    font-family: 'Dancing Script', cursive;
+        font-family: 'Grand Hotel', cursive;
+        /* font-family: 'Work Sans', sans-serif; */
+}
