@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
+  --primary:#fcfcfc;
+  --secondary:#6d6942;
+  --button:#5653b5;
+  --padding:1.5rem;
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +21,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
 
 body {
   color: rgb(var(--foreground-rgb));
