@@ -1,0 +1,26 @@
+.label-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.label-name{
+    color:var(--secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 12px;
+    
+}
+.input-text{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color:var(--secondary);
+  border-radius: 3px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 6px;
+  margin-bottom: 20px;
+
+}
