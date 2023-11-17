@@ -1,0 +1,73 @@
+.bg-container{
+    height:100vh;
+    padding: var(--padding);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 20px;
+
+}
+.card-container{
+    width:40%;
+    background-color: #dceef6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+@media screen and (max-width:450px){
+    .card-container{
+    background-color: #dceef6;
+    border-radius: 10px;
+    width:100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+}
+
+.login-heading{
+    text-align: center;
+    font-size: 1.5rem;
+    color:var(--secondary);
+    font-weight: 600;
+}
+.login-button{
+    border: none;
+    background-color: var(--button);
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 12px;
+    cursor: pointer;
+  
+}
+.error-msg{
+    margin-top:1px;
+}
+.new-user{
+    font-size: 0.5rem;
+    color:#a0a0a0;
+    margin: 5px;
+}
+.span-word{
+    color: var(--button);
+
+}
+.forgot-pass{
+    color:var(--secondary);
+    text-align: center;
+    font-size: 0.7rem;
+}
+.label-radio{
+    margin-right:8px;
+}
+.error{
+    line-height: 11px;
+    font-size: 10px;
+    color:#dd5858;
+}
