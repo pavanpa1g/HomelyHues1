@@ -1,7 +1,7 @@
 "use slice";
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
 import apiStatusConstants from "@/utils/apiconstants";
 const initialState = {
   user: {},

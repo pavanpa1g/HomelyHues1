@@ -1,8 +1,6 @@
 "use client";
 
-
-
-import Header from '@/components/Header'
+import Header from "@/components/Header";
 import BottomNavBar from "@/components/Header/BottomNavBar";
 import "./page.css";
 
@@ -11,9 +9,7 @@ export default function Home() {
     <main className="home">
       <Header />
       <div className="home-con">
-        <p>
-          hello
-        </p>
+        <p>hello</p>
       </div>
       <BottomNavBar />
     </main>

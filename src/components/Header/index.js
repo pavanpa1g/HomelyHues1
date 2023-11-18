@@ -5,81 +5,75 @@
 // </div>
 // }
 
-import Link from 'next/Link'
-import Popup from 'reactjs-popup'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {IoMdClose} from 'react-icons/io'
-import {AiFillHome} from 'react-icons/ai'
-import {BsInfoCircleFill} from 'react-icons/bs'
-import {AiOutlineSearch} from 'react-icons/ai'
+import Link from "next/link";
+import Popup from "reactjs-popup";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
+import { AiFillHome } from "react-icons/ai";
+import { BsInfoCircleFill } from "react-icons/bs";
+import { AiOutlineSearch } from "react-icons/ai";
 
-import './index.css'
+import "./index.css";
 
 const Header = () => (
-    <div className="header">
-  <div>
-    <div className="nav-content">
-      <Link href="/">
-        <img
-          className="website-logo"
-          src="https://previews.123rf.com/images/natka80/natka801604/natka80160400002/55147950-hostel-icon.jpg"
-          alt="website logo"
-        />
-      </Link>
-      <Popup
-        modal
-        trigger={
-          <button
-            className="hamburger-icon-button"
-            type="button"
-          >
-            <GiHamburgerMenu size="30" />
-          </button>
-        }
-        className="popup-content"
-      >
-        {close => (
-          <div className="modal-container">
-            <button
-              className="close-button"
-              type="button"
-              onClick={() => close()}
-            >
-              <IoMdClose size="30" color="#616e7c" />
+  <div className="header">
+    <div>
+      <div className="nav-content">
+        <Link href="/">
+          <img
+            className="website-logo"
+            src="https://previews.123rf.com/images/natka80/natka801604/natka80160400002/55147950-hostel-icon.jpg"
+            alt="website logo"
+          />
+        </Link>
+        <Popup
+          modal
+          trigger={
+            <button className="hamburger-icon-button" type="button">
+              <GiHamburgerMenu size="30" />
             </button>
-            <ul className="nav-links-list">
-              <li className="nav-link-item">
-                <Link className="nav-link" href="/" onClick={() => close()}>
-                  <AiFillHome size="36" />
-                  <p className="nav-link-content">Home</p>
-                </Link>
-              </li>
-              <li className="nav-link-item">
-                <Link className="nav-link" href="/about" onClick={() => close()}>
-                  <BsInfoCircleFill size="32" />
-                  <p className="nav-link-content">About</p>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
-      </Popup>
+          }
+          className="popup-content"
+        >
+          {(close) => (
+            <div className="modal-container">
+              <button
+                className="close-button"
+                type="button"
+                onClick={() => close()}
+              >
+                <IoMdClose size="30" color="#616e7c" />
+              </button>
+              <ul className="nav-links-list">
+                <li className="nav-link-item">
+                  <Link className="nav-link" href="/" onClick={() => close()}>
+                    <AiFillHome size="36" />
+                    <p className="nav-link-content">Home</p>
+                  </Link>
+                </li>
+                <li className="nav-link-item">
+                  <Link
+                    className="nav-link"
+                    href="/about"
+                    onClick={() => close()}
+                  >
+                    <BsInfoCircleFill size="32" />
+                    <p className="nav-link-content">About</p>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
+        </Popup>
+      </div>
+    </div>
+    <div className="input-container-mobile">
+      <input type="search" placeholder="Search" className="search-input" />
+      <button type="button" className="search-button">
+        <AiOutlineSearch className="search-icon" />
+      </button>
     </div>
   </div>
-  <div className="input-container-mobile">
-    <input
-    type="search"
-    placeholder="Search"
-    className="search-input"
-    />
-    <button
-    type="button"
-    className="search-button"
-    >
-    <AiOutlineSearch className="search-icon" />
-    </button>
-</div>
-</div>
-)
+);
 
-export default Header
+export default Header;
