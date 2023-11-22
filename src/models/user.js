@@ -9,11 +9,11 @@ try {
   const userSchema = mongoose.Schema(
     {
       role: { type: Boolean, required: true }, //ture = provider  //false= user
-      name: { type: String, required: true },
+      name: { type: String, required: true, trim: true },
       dateOfBirth: { type: Date },
       gender: { type: String },
       phoneNumber: { type: String },
-      email: { type: String, required: true, unique: true },
+      email: { type: String, required: true, unique: true, trim: true },
       password: { type: String, required: true },
       picture: {
         type: String,

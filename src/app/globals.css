@@ -10,7 +10,7 @@
   --secondary:#6d6942;
   --button:#5653b5;
   --padding:1.5rem;
-
+  --text:#91a1b7;
 }
 
 @media (prefers-color-scheme: dark) {

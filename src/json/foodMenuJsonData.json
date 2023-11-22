@@ -1,0 +1,18 @@
+[
+    {
+        "name":"food",
+        "id":"Veg",
+        "label":"Veg"
+    },
+    {
+        "name":"food",
+        "id":"NonVeg",
+        "label":"Non Veg"
+    },
+
+    {
+        "name":"food",
+        "id":"both",
+        "label":"Both"
+    }
+]

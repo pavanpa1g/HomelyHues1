@@ -32,7 +32,6 @@ export async function POST(request) {
       );
     }
 
-    console.log("user", user);
     const responseUser = {
       _id: user._id,
       name: user.name,
