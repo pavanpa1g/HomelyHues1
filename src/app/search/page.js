@@ -3,11 +3,11 @@
 import BottomNavBar from "@/components/BottomNavBar";
 import React from "react";
 
-const Profile = () => {
+const Search = () => {
   return <> 
-  <p>Profile</p>
+  <p>Search</p>
   <BottomNavBar /> 
   </>;
 };
 
-export default Profile;
+export default Search;
