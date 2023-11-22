@@ -3,11 +3,11 @@
 import BottomNavBar from "@/components/BottomNavBar";
 import React from "react";
 
-const Profile = () => {
+const Wishlist = () => {
   return <> 
-  <p>Profile</p>
-  <BottomNavBar /> 
+  <p>Wishlist</p>
+  <BottomNavBar />
   </>;
 };
 
-export default Profile;
+export default Wishlist;
