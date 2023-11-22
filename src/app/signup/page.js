@@ -34,7 +34,7 @@ function signup() {
       <div className="bg-container">
         <div className="card-container">
           <h1 className="login-heading">Sign Up!</h1>
-          <img src="" />
+          {/* <Image src="" /> */}
           <Input
             label="Username"
             placeholder="Enter Username"

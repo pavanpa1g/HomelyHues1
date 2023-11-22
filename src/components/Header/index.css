@@ -1,5 +1,6 @@
 .header {
     padding: 0px 20px;
+    box-shadow: 0 2px 2px 0 rgba(31, 45, 61, .15);
 }
 
 .header-icon {
@@ -51,6 +52,10 @@
 .modal-title {
     font-size: 14px;
     font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 0 8px;
+    color: "black";
     line-height: 24px;
     color: var(--secondary);
 }

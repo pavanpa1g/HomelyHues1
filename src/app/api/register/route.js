@@ -18,9 +18,8 @@ export async function POST(request) {
 
   try {
     //checking for existing user
-    let users = await User.findOne({
-      email: { $regex: new RegExp(`^${email}$`, "i") },
-    });
+    let users = await User.findOne({ email });
+
     if (users) {
       return NextResponse.json(
         { message: "User already exists" },

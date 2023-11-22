@@ -1,0 +1,78 @@
+.hostel-bg-container{
+    padding: var(--padding);
+}
+
+.hostel-head{
+    color:rgb(52, 45, 45);
+    color: var(--secondary);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom:1rem;
+}
+
+.submit{
+    background-color: var(--secondary);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    height: 40px;
+    width: 130px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.hostel-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.location-container{
+    border: 1px solid var(--secondary);
+    align-self: flex-end;
+    padding: 0.5rem;
+    height: 40px;
+    width: 40px;
+    border-radius:4px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-name{
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0px;
+    /* margin-left: 8px; */
+}
+
+.radio-input{
+    margin-right: 4px;
+}
+
+.food-label{
+    margin-right:1.5rem ;
+}
+
+.address-text{
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.location-icon{
+    color: var(--secondary);
+}
+
+.hostel-err-msg{
+    color: red;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.food-menu-margin-bottom{
+    margin-bottom: 0px;
+}
