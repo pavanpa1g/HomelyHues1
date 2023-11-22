@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
-import BottomNavBar from "@/components/Header/BottomNavBar";
+import BottomNavBar from "@/components/BottomNavBar";
 import "./page.css";
 
 export default function Home() {
