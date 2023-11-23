@@ -8,6 +8,7 @@ import "./index.css";
 import Header from "@/components/Header";
 import apiStatusConstants from "@/utils/apiconstants";
 import toast from "react-hot-toast";
+import BottomNavBar from "@/components/BottomNavBar";
 
 const exampleData = [
   { id: 1, value: "Men's Hostel" },
@@ -19,26 +20,6 @@ const Explore = () => {
   const [search, setSearch] = useState("");
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
   const [searchList, setSearchList] = useState([]);
-
-  const [animationIndex, setAnimationIndex] = useState(0);
-
-  let intervalId;
-
-  // const updatedValue = () => {
-  //   intervalId = setInterval(() => {
-  //     if (animationIndex < exampleData.length - 1) {
-  //       setAnimationIndex((prevIndex) => prevIndex + 1);
-  //     } else {
-  //       setAnimationIndex(0);
-  //     }
-  //   }, 4160);
-  // };
-
-  // useEffect(() => {
-  //   updatedValue();
-
-  //   return () => clearInterval(intervalId);
-  // }, [animationIndex]);
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -102,6 +83,7 @@ const Explore = () => {
           ))}
         </ul>
       </div>
+      <BottomNavBar />
     </div>
   );
 };

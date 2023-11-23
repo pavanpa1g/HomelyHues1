@@ -1,0 +1,82 @@
+
+
+.hostel-page-bg-container{
+    min-height: 100vh;
+    background-color: var(--primary);
+}
+
+.hostel-page-container{
+    padding: 0.75rem var(--padding);
+}
+
+.hostel-page-image{
+    width: 100%;
+    height: 20vh;
+    /* object-fit: none; */
+    /* object-fit: cover; */
+}
+
+.hostel-page-image:hover{
+    object-fit: cover;
+}
+
+.color-text{
+    color: var(--secondary);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.hostel-page-name{
+    font-size: 1.5em;
+    font-weight: 800;
+    margin: 4px 0;
+}
+
+
+
+.fast-food-icon{
+    color: var(--button);
+    /* animation-delay: 0.8s; */
+}
+
+.icon-hostel-page{
+font-size: 2.1rem;
+animation: scale 1.5s infinite ease-in-out;
+}
+
+.dialer-icon{
+    color: green;
+    /* animation-delay: 0.4s; */
+}
+
+.address-text{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.hostel-page-icon-text-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.25rem 0; 
+    border: 1px solid rgb(216, 212, 212);
+    /* border:1px solid var(--text); */
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.location-icon {
+    color: red;
+    font-size: 3.5rem;
+}
+
+@keyframes scale {
+    0%,100%{
+        transform: scale(0.85);
+    }
+    50%{
+        transform: scale(1);
+    }
+}

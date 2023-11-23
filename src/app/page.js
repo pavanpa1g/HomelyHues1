@@ -4,6 +4,10 @@ import Header from "@/components/Header";
 import BottomNavBar from "@/components/BottomNavBar";
 import {useState} from 'react'
 import "./page.css";
+import { useEffect, useState } from "react";
+
+import hostelJson from "@/json/hostelJson";
+import HostelItem from "@/components/HostelComponents/HostelItem";
 
 export default function Home() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -18,22 +22,10 @@ export default function Home() {
   return (
     <main className="home">
       <Header />
-      <div className="home-con">
-
- 
-    <div className="image-upload-container">
-      <label htmlFor="image-upload" className="custom-file-upload">
-        Select Image
-      </label>
-      <input
-        type="file"
-        id="image-upload"
-        accept="image/*"
-        onChange={handleFileChange}
-        style={{ display: 'none' }}
-      />
-      {selectedFile && <p>Selected: {selectedFile.name}</p>}
-    </div>
+      <div className="home-bg-container">
+        {hostelJson.map((item) => (
+          <HostelItem key={item._id} item={item} />
+        ))}
       </div>
       <BottomNavBar />
     </main>

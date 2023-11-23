@@ -7,9 +7,25 @@ connectedDb();
 
 export async function POST(request) {
   const { hostelData } = await request.json();
-  const { ownerId, hostelName, address, foodMenu, contactNumber, image } =
-    hostelData;
-  if (!ownerId || !hostelName || !address || !contactNumber) {
+
+  const {
+    owner,
+    hostelName,
+    address,
+    foodMenu,
+    contactNumber,
+    image,
+    numberOfRooms,
+    roomTypes,
+  } = hostelData;
+  if (
+    !owner ||
+    !hostelName ||
+    !address ||
+    !contactNumber ||
+    !numberOfRooms ||
+    !roomTypes
+  ) {
     return NextResponse.json(
       { message: "Fill all the input fields" },
       { status: 401 }
@@ -18,7 +34,7 @@ export async function POST(request) {
 
   try {
     // Check user role
-    const user = await User.findOne({ _id: ownerId });
+    const user = await User.findOne({ _id: owner });
 
     if (!user || user.role === false) {
       return NextResponse.json(
@@ -28,25 +44,27 @@ export async function POST(request) {
     }
 
     //check if there the owner id is already there in the db
-    const userRegistered = await Hostel.findOne({ ownerId });
+    const userRegistered = await Hostel.findOne({ owner });
     if (userRegistered) {
       return NextResponse.json(
-        { message: `${ownerId} has been registered with another hostel` },
+        { message: `User has been registered with another hostel` },
         { status: 401 }
       );
     }
 
     const newHostel = {
-      ownerId,
+      owner,
       hostelName,
       address,
       foodMenu,
       contactNumber,
       image,
+      numberOfRooms,
+      roomTypes,
     };
 
     const createdHostel = await Hostel(newHostel).populate(
-      "ownerId",
+      "owner",
       "-password"
     );
     await createdHostel.save();

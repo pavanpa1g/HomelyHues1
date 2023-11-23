@@ -1,14 +1,18 @@
 .bottom-con{
     display: flex;
-    justify-content: space-between !important;
-    padding: 0px 20px;
+    justify-content: space-between;
+    padding: 0.5rem 20px ;
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-top-left-radius:28px ;
+    border-top-right-radius: 28px;
+    box-shadow: 0 2px 2px 0 inset rgba(31, 45, 61, .15);
+    background-color: var(--primary);
 }
 
 .icon {
-    width: 30px;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -33,5 +37,47 @@
 .bottom-icon-name {
     font-family: var(--font-family);
     padding-top: 3px;
-    color: brown;
+    /* color: brown; */
+}
+
+
+.selected-bg{
+    background-color:rgb(240, 155, 240);
+}
+
+.link-item{
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+
+.animation-close{
+    animation: slideDown 0.4s ease-in-out;   
+}
+
+
+
+
+@keyframes slideDown {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+
+.animation-open{
+    animation: slideUp 0.4s ease-in-out forwards;
+}
+
+
+@keyframes slideUp {
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(100%);
+    }
 }
