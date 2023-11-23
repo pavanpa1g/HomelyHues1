@@ -13,10 +13,47 @@ import "./hostel.css";
 import apiStatusConstants from "@/utils/apiconstants";
 import { useRouter } from "next/navigation";
 
+const roomTypesData = [
+  {
+    id: 1,
+    type: "Single",
+    price: 0,
+    numberOfRooms: 0,
+    selected: false,
+  },
+  {
+    id: 2,
+    type: "Double",
+    price: 0,
+    numberOfRooms: 0,
+    selected: false,
+  },
+  {
+    id: 3,
+    type: "Triple",
+    price: 0,
+    numberOfRooms: 0,
+    selected: false,
+  },
+  {
+    id: 4,
+    type: "Four",
+    price: 0,
+    numberOfRooms: 0,
+    selected: false,
+  },
+  {
+    id: 5,
+    type: "Five",
+    price: 0,
+    numberOfRooms: 0,
+    selected: false,
+  },
+];
+
 const CreateHostel = () => {
   const [hostelName, setHostelName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
-
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -27,7 +64,11 @@ const CreateHostel = () => {
   const [addressLoading, setAddressLoading] = useState(false);
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
   const [errorMsg, setErrorMsg] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(
+    "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o="
+  );
+  const [numberOfRooms, setNumberOfRooms] = useState(0);
+  const [roomTypesAndPrice, setRoomTypesAndPrice] = useState(roomTypesData);
 
   const router = useRouter();
 
@@ -121,13 +162,25 @@ const CreateHostel = () => {
       coordinates: location,
     };
     const token = Cookies.get("userId");
+
+    const newRoomTypes = roomTypesAndPrice
+      .filter((item) => item.selected)
+      .map((item) => ({
+        type: item.type,
+        price: parseInt(item.price, 10),
+        numberOfRooms: parseInt(item.numberOfRooms, 10),
+        selected: item.selected,
+        id: item.id,
+      }));
     const hostelData = {
-      ownerId: "65589cc4c763a88b9cc432a3", //replace userId stored in the cookies
+      owner: "65589ca5c763a88b9cc4329f", //replace userId stored in the cookies
       hostelName,
       address,
       foodMenu,
       contactNumber: contactNumber,
       image,
+      numberOfRooms: parseInt(numberOfRooms),
+      roomTypes: newRoomTypes,
     };
 
     const options = {
@@ -158,6 +211,41 @@ const CreateHostel = () => {
       toast.error("Something Went Wrong!");
     }
   };
+
+  const handleCheckBox = (id) => {
+    setRoomTypesAndPrice((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, selected: !item.selected, price: 0, numberOfRooms: 0 }
+          : item
+      )
+    );
+  };
+
+  const handlePrice = (id, event) => {
+    setRoomTypesAndPrice((prev) => {
+      return prev.map((item) =>
+        item.id === id ? { ...item, price: event.target.value } : item
+      );
+    });
+  };
+
+  const handleNoOfRooms = (id, event) => {
+    setRoomTypesAndPrice((prev) => {
+      return prev.map((item) =>
+        item.id === id ? { ...item, numberOfRooms: event.target.value } : item
+      );
+    });
+  };
+
+  const totalNoOfRoomTypes = roomTypesAndPrice.reduce(
+    (prev, current) =>
+      current.selected ? prev + parseInt(current.numberOfRooms, 10) : prev,
+    0
+  );
+
+  const numberOfRoomsEqualToTotalTypesOfRooms =
+    parseInt(numberOfRooms) === totalNoOfRoomTypes;
 
   return (
     <div className="min-h-screen  bg-white">
@@ -275,6 +363,90 @@ const CreateHostel = () => {
               </div>
             ))}
           </div>
+
+          <h2 className="address-text mb-2">Rooms Details</h2>
+          <Input
+            label="Number of Rooms"
+            placeholder="Enter Number of Rooms"
+            value={numberOfRooms === 0 ? "" : numberOfRooms}
+            handleInputChange={setNumberOfRooms}
+            fullBorder={true}
+            type="number"
+            required={true}
+          />
+
+          <label htmlFor={"room types"} className="label-name">
+            Room Types
+          </label>
+          <div className="flex  justify-between pl-4 mb-2">
+            <p className="text-black room-type-text">Type</p>
+            <p className="text-black  price-text-width">Price/month</p>
+            <p className="text-black no-of-rooms-text-width">No of Rooms</p>
+          </div>
+          <div>
+            {roomTypesAndPrice.map((item) => (
+              <div
+                key={item.id}
+                className="flex justify-between mb-2 items-center"
+              >
+                <input
+                  type="checkbox"
+                  id={item.id}
+                  value={item.selected}
+                  checked={item.selected}
+                  onChange={() => handleCheckBox(item.id)}
+                  className="checkbox"
+                />
+                <label
+                  htmlFor={item.id}
+                  className={`room-type-text ${
+                    item.selected && "selected-text"
+                  }`}
+                >
+                  {item.type}
+                  {" bed"}
+                </label>
+                <input
+                  type="number"
+                  value={item.price === 0 ? "" : item.price}
+                  onChange={(event) => handlePrice(item.id, event)}
+                  className={`input-room-price mr-1 ${
+                    item.selected && "selected"
+                  }`}
+                  placeholder="₹ Price"
+                  disabled={!item.selected}
+                  required={item.selected}
+                  min={0}
+                />
+                <input
+                  type="number"
+                  value={item.numberOfRooms === 0 ? "" : item.numberOfRooms}
+                  onChange={() => console.log(item.type)}
+                  min={0}
+                  className={`input-no-of-rooms ${
+                    item.selected && "selected"
+                  }  ${
+                    item.selected &&
+                    parseInt(numberOfRooms) > totalNoOfRoomTypes &&
+                    "orange-border"
+                  } ${
+                    item.selected &&
+                    parseInt(numberOfRooms) < totalNoOfRoomTypes &&
+                    "red-border"
+                  } ${
+                    item.selected &&
+                    numberOfRoomsEqualToTotalTypesOfRooms &&
+                    "green-border"
+                  }`}
+                  placeholder="No of Rooms"
+                  onChange={(event) => handleNoOfRooms(item.id, event)}
+                  disabled={!item.selected}
+                  required={item.selected}
+                />
+              </div>
+            ))}
+          </div>
+
           {apiStatus === apiStatusConstants.failure && (
             <p className="hostel-err-msg">* {errorMsg}</p>
           )}

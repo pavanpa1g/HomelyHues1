@@ -5,20 +5,30 @@ import { FiLogOut } from "react-icons/fi";
 
 import "./index.css";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
+const overlayStyles = {
+  backgroundColor: "#f5f5f5",
+  fontFamily: "Roboto",
+  borderRadius: "8px",
+  boxShadow: `2px 2px 5px rgba(0, 0, 0,)`,
+  width: "380px",
+  height: "180px",
+  margin: "auto",
+};
 
 const Header = () => {
-  const overlayStyles = {
-    backgroundColor: "#f5f5f5",
-    fontFamily: "Roboto",
-    borderRadius: "8px",
-    boxShadow: `2px 2px 5px rgba(0, 0, 0,)`,
-    width: "380px",
-    height: "180px",
-    margin: "auto",
-  };
+  const router = useRouter();
 
   const onClickLogout = () => {};
+
+  const pathName = usePathname();
+
+  const searchHide = ["/explore", "/create-hostel", "/wishlist"];
+
+  const handleRouteChange = () => {
+    router.push("/explore");
+  };
 
   return (
     <div className="header">
@@ -26,6 +36,19 @@ const Header = () => {
         <Link href="/">
           <i className="fa-solid fa-hotel header-icon"></i>
         </Link>
+        {!searchHide.includes(pathName) && (
+          <div className="input-container-mobile" onClick={handleRouteChange}>
+            <AiOutlineSearch className="search-icon" />
+            <input
+              type="search"
+              placeholder="Search"
+              className="search-input"
+            />
+            {/* <button type="button" className="search-button">
+              <AiOutlineSearch className="search-icon" />
+            </button> */}
+          </div>
+        )}
         <Popup
           modal
           overlayStyle={overlayStyles}
@@ -61,13 +84,6 @@ const Header = () => {
             </div>
           )}
         </Popup>
-      </div>
-
-      <div className="input-container-mobile">
-        <input type="search" placeholder="Search" className="search-input" />
-        <button type="button" className="search-button">
-          <AiOutlineSearch className="search-icon" />
-        </button>
       </div>
     </div>
   );

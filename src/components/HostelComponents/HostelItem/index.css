@@ -1,0 +1,96 @@
+
+
+.hostel-item-bg-container{
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+.hostel-item-image{
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    border-radius:0.5rem ;
+
+}
+
+
+.hostel-item-image:hover{
+    transform: scale(1.1);
+}
+
+.hostel-item-image-container{
+    width: 7.375rem;
+    width: 38%;
+    overflow: hidden;
+    border-radius:0.5rem ;
+}
+
+
+.hostel-item-info-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 0.5rem;
+    width: 60%;
+}
+
+.hostel-name-text{
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    text-overflow: ellipsis;
+}
+
+.address-text-para{
+    color:  black;
+    font-size: 13px;
+    /* line-height: 1rem; */
+    font-family: var(--font-family);
+}
+
+.contact-number-text{
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-family: var(--font-family);
+}
+
+.dialer-icon{
+    color: var(--button);
+    font-size: 1.2rem;
+    color: rgb(25, 156, 25);
+}
+
+.fast-food-icon{
+    color: var(--button);
+    font-size:1rem ;
+}
+
+.location-icon{
+    color: var(--button);
+    font-size: 1.5rem;
+    color: red;
+}
+
+.wishlist-container{
+    position: absolute;
+    right: 2rem;
+}
+
+.wishlist-icon{
+    color: rgb(235, 90, 90);
+    font-size: 1.5rem;
+}
+
+.not-select{
+    color: var(--text);
+}

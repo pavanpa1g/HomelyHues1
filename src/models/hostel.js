@@ -7,7 +7,7 @@ try {
 } catch (error) {
   const hostelSchema = mongoose.Schema(
     {
-      ownerId: {
+      owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
@@ -27,6 +27,21 @@ try {
       },
       foodMenu: { type: String, trim: true },
       contactNumber: { type: String, required: true },
+      numberOfRooms: { type: Number, required: true },
+      roomTypes: [
+        {
+          type: {
+            type: String,
+            unique: true,
+            enum: ["Single", "Double", "Triple", "Four", "Five"],
+            required: true,
+          },
+          price: { type: Number, required: true },
+          numberOfRooms: { type: Number, required: true },
+          selected: { type: Boolean, default: false },
+          id: { type: Number, required: true },
+        },
+      ],
     },
     {
       timestamps: true,

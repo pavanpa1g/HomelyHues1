@@ -1,0 +1,433 @@
+[
+  {
+    "_id": "kjndjnsklfnkdjnv",
+    "hostelName": "Green Valley Hostel",
+    "image": "https://th.bing.com/th/id/R.24545f0ff472c18da3fb83c3989ee819?rik=pXTZTHPl0lIOAw&riu=http%3a%2f%2finteriordesignermagazine.co.uk%2fwp-content%2fuploads%2f2018%2f10%2fHostel-online-1.jpg&ehk=sJYYnehf4UG3%2bEfm%2fYbjavCRLSwYA6w4DqF6ZpotjY0%3d&risl=&pid=ImgRaw&r=0",
+    "address": {
+      "street": "Green Street",
+      "city": "Secunderabad",
+      "district": "Hyderabad",
+      "state": "Telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "Vegetarian",
+    "contactNumber": "1234567890",
+    "owner": "John Doe",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnsklfnkdjnvc",
+    "hostelName": "Blue Horizon Hostel",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "Blue Street",
+      "city": "Secunderabad",
+      "district": "Hyderabad",
+      "state": "Telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "Non-Vegetarian",
+    "contactNumber": "9876543210",
+    "owner": "Jane Smith",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnsklfnkdknjnv",
+    "hostelName": "Hostel C",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "both",
+    "contactNumber": "5555555555",
+    "owner": "Robert Johnson"
+    ,
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnsklfnkdjnvhh",
+    "hostelName": "Hostel D",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "veg",
+    "contactNumber": "7777777777",
+    "owner": "Emily Davis",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnsklfnkhhihdjnv",
+    "hostelName": "Hostel E",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "nonveg",
+    "contactNumber": "9999999999",
+    "owner": "Michael Wilson",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjmkmndjnsklfnkdjnv",
+    "hostelName": "Hostel F",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "both",
+    "contactNumber": "1111111111",
+    "owner": "Sophia Taylor",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjnkndjnsklfnkdjnv",
+    "hostelName": "Hostel G",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "veg",
+    "contactNumber": "2222222222",
+    "owner": "Jacob Anderson",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjnkjkjdjnsklfnkdjnv",
+    "hostelName": "Hostel H",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "nonveg",
+    "contactNumber": "3333333333",
+    "owner": "Olivia Martinez",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnsklfnkdsddsjnv",
+    "hostelName": "Hostel I",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "both",
+    "contactNumber": "4444444444",
+    "owner": "Liam Thompson",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  },
+  {
+    "_id": "kjndjnskdddvlfnkdjnv",
+    "hostelName": "Hostel J",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
+    "address": {
+      "street": "nagar",
+      "city": "secundrabad",
+      "district": "hyderabad",
+      "state": "telangana",
+      "postalCode": 500061,
+      "coords": {
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      }
+    },
+    "foodMenu": "veg",
+    "contactNumber": "6666666666",
+    "owner": "Ava Harris",
+    "numberOfRooms": 10,
+    "roomTypes": [
+      {
+        "type": "Single",
+        "price": 7000,
+        "numberOfRooms": 2,
+        "id": 1,
+        "selected": true
+      },
+      {
+        "type": "Double",
+        "price": 6000,
+        "numberOfRooms": 3,
+        "id": 2,
+        "selected": true
+      },
+      {
+        "type": "Triple",
+        "price": 5000,
+        "numberOfRooms": 5,
+        "id": 3,
+        "selected": true
+      }
+    ]
+  }
+]

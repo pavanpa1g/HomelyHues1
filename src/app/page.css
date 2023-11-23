@@ -2,11 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Grand+Hotel&family=Work+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Grand+Hotel&family=Work+Sans:wght@300&display=swap');
 .home {
-    height: 100vh;
-    /* background-color: var(--primary); */
+    min-height: 100vh;
+    background-color: var(--primary);
 }
 
 .home-con {
+    padding: var(--padding);
+}
+
+.home-bg-container{
     padding: var(--padding);
 }
 
