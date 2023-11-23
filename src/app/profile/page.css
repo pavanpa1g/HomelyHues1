@@ -1,0 +1,85 @@
+.profile-container {
+    padding: var(--padding);
+    width: 100vw;
+}
+
+.profile-heading {
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    font-weight: bold;
+}
+
+.profile {
+    background-size:cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin: 18px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.choose-heading {
+    font-size: 1rem;
+    color: var(--text);
+    padding-bottom: 10px
+}
+
+.close-button {
+    background-color: var(--button);
+    outline: none;
+    border-radius: 4px;
+    color: var(--primary);
+    font-size: rem;
+    padding: 6px 10px;
+    border: none;
+    margin: 10px 0px; 
+}
+
+.camera-icon {
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgb(31, 226, 200);
+  padding: 7px 9px;
+  border-radius: 50%;
+  color: var(--primary);
+  margin-left: 5.6rem;
+  margin-top: 5.7rem;
+}
+
+.side-heading {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.answer {
+    text-align: right;
+    font-size: 0.95rem;
+    width: 200px;
+    background-color: transparent;
+    margin-left: auto;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.hr-line {
+    border-top: 1px solid lightgrey;
+    margin: 18px 0px;
+}
+
+.last-line {
+    border-top: 1px solid lightgrey;
+    margin-top: 18px;
+}
+
+.modal {
+    padding: 6rem 4rem;
+}
