@@ -2,22 +2,23 @@
 
 import Header from "@/components/Header";
 import BottomNavBar from "@/components/BottomNavBar";
-import {useState} from 'react'
-import "./page.css";
+
 import { useEffect, useState } from "react";
 
 import hostelJson from "@/json/hostelJson";
 import HostelItem from "@/components/HostelComponents/HostelItem";
 
+import "./page.css";
+
 export default function Home() {
-    const [selectedFile, setSelectedFile] = useState(null);
-  
-    const handleFileChange = (e) => {
-      const file = e.target.files[0];
-      setSelectedFile(file);
-  
-      // You can add additional logic here, such as previewing the selected image.
-    };
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+
+    // You can add additional logic here, such as previewing the selected image.
+  };
 
   return (
     <main className="home">

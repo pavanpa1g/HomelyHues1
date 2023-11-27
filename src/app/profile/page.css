@@ -1,6 +1,13 @@
-.profile-container {
+.profile-bg-container{
+    height: 100vh;
+    background-color: var(--primary);
     padding: var(--padding);
-    width: 100vw;
+}
+
+.profile-container {
+
+    width: 100%;
+    
 }
 
 .profile-heading {
@@ -8,7 +15,14 @@
     font-size: 1.5rem;
     padding-top: 1rem;
     font-weight: bold;
+    color: var(--secondary);
 }
+
+.back-icon{
+    color: var(--secondary);
+    font-size: 28px;
+}
+
 
 .profile {
     background-size:cover;
@@ -61,6 +75,7 @@
     background-color: transparent;
     margin-left: auto;
     outline: none;
+    color: var(--secondary);
 }
 
 .container {

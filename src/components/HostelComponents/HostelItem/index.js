@@ -21,12 +21,11 @@ const HostelItem = ({ item }) => {
   const handleHostel = () => {
     dispatch(setSelectedHostel(item));
   };
+
+  // query: { ...item, ...address, ...coords },
   return (
     <Link
-      href={{
-        pathname: `/hostel/${item._id}`,
-        query: { ...item, ...address, ...coords },
-      }}
+      href={`/hostel/${item._id}`}
       className="hostel-item-bg-container"
       onClick={handleHostel}
     >

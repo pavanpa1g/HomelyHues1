@@ -69,6 +69,8 @@ const CreateHostel = () => {
   );
   const [numberOfRooms, setNumberOfRooms] = useState(0);
   const [roomTypesAndPrice, setRoomTypesAndPrice] = useState(roomTypesData);
+  const [numberOfFloors, setNumberOfFloors] = useState(0);
+  const [floorSharing, setFloorSharing] = useState([]);
 
   const router = useRouter();
 
@@ -220,6 +222,18 @@ const CreateHostel = () => {
           : item
       )
     );
+
+    setFloorSharing((prevFloorsData) => {
+      const updatedFloorsData = prevFloorsData.map((floor) => ({
+        ...floor,
+        roomTypes: floor.roomTypes.map((roomType) => ({
+          ...roomType,
+          selected: roomType.id === id ? !roomType.selected : roomType.selected,
+          // Update condition as per your requirements
+        })),
+      }));
+      return updatedFloorsData;
+    });
   };
 
   const handlePrice = (id, event) => {
@@ -246,6 +260,45 @@ const CreateHostel = () => {
 
   const numberOfRoomsEqualToTotalTypesOfRooms =
     parseInt(numberOfRooms) === totalNoOfRoomTypes;
+
+  const handleSettingNumberOfFloors = (text) => {
+    const newNumber = parseInt(text, 10) || 0;
+    setNumberOfFloors(newNumber);
+
+    const newFloorData = Array.from({ length: newNumber }, (_, index) => ({
+      floorNumber: index + 1,
+      roomTypes: [
+        {
+          type: "Single",
+          numberOfRooms: 0,
+          id: 1,
+          selected: roomTypesAndPrice[0].selected,
+        },
+        {
+          type: "Double",
+          numberOfRooms: 0,
+          id: 2,
+          selected: roomTypesAndPrice[1].selected,
+        },
+        {
+          type: "Triple",
+          numberOfRooms: 0,
+          id: 3,
+          selected: roomTypesAndPrice[2].selected,
+        },
+        {
+          type: "Four",
+          numberOfRooms: 0,
+          id: 4,
+          selected: roomTypesAndPrice[3].selected,
+        },
+      ],
+    }));
+
+    setFloorSharing(newFloorData);
+  };
+
+  console.log("floorSharing", floorSharing);
 
   return (
     <div className="min-h-screen  bg-white">
@@ -421,7 +474,7 @@ const CreateHostel = () => {
                 <input
                   type="number"
                   value={item.numberOfRooms === 0 ? "" : item.numberOfRooms}
-                  onChange={() => console.log(item.type)}
+                  // onChange={() => console.log(item.type)}
                   min={0}
                   className={`input-no-of-rooms ${
                     item.selected && "selected"
@@ -446,6 +499,55 @@ const CreateHostel = () => {
               </div>
             ))}
           </div>
+
+          <h2 className="address-text mb-2">Floor Details</h2>
+          <Input
+            label="Number of Floor"
+            placeholder="Enter Number of Floors"
+            value={numberOfFloors === 0 ? "" : numberOfFloors}
+            // handleInputChange={setNumberOfFloors}
+            handleInputChange={handleSettingNumberOfFloors}
+            fullBorder={true}
+            type="number"
+            required={true}
+          />
+
+          {floorSharing.map(
+            (item, index) =>
+              (roomTypesAndPrice[0].selected ||
+                roomTypesAndPrice[1].selected ||
+                roomTypesAndPrice[2].selected ||
+                roomTypesAndPrice[3].selected) && (
+                <>
+                  <h1 key={index} className="text-black">
+                    floor {item.floorNumber}
+                  </h1>
+                  <div>
+                    {item.roomTypes.map((item, twoindex) => {
+                      return (
+                        item.selected && (
+                          <div key={item.floorNumber} className="flex">
+                            <p className="text-black room-type-text">
+                              {item.type}
+                            </p>
+                            <input
+                              type="number"
+                              // value={numberOfFloors === 0 ? "" : numberOfFloors}
+                              // onChange={(event) => handlePrice(item.id, event)}
+                              className={`input-room-price mr-1 `}
+                              placeholder="no of room"
+                              // disabled={!item.selected}
+                              // required={item.selected}
+                              min={0}
+                            />
+                          </div>
+                        )
+                      );
+                    })}
+                  </div>
+                </>
+              )
+          )}
 
           {apiStatus === apiStatusConstants.failure && (
             <p className="hostel-err-msg">* {errorMsg}</p>
