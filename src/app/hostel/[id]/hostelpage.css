@@ -3,7 +3,10 @@
 .hostel-page-bg-container{
     min-height: 100vh;
     background-color: var(--primary);
+
 }
+
+
 
 .hostel-page-container{
     padding: 0.75rem var(--padding);
@@ -79,4 +82,37 @@ animation: scale 1.5s infinite ease-in-out;
     50%{
         transform: scale(1);
     }
+}
+
+
+.bed-icon{
+    color: rgb(204, 0, 255);
+    font-size: 1.25rem;
+}
+
+.room-types-cont{
+    padding-right: 1rem;
+    gap: 0.25rem;
+}
+
+.price-text{
+    font-weight: 600;
+}
+
+.number-color{
+    color:var(--button);
+    font-weight: bold;
+}
+
+.book-bed-button{
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    height: 3rem;
+    padding: 0 3rem;
+    border-radius:0.5rem ;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }

@@ -42,6 +42,7 @@ try {
           id: { type: Number, required: true },
         },
       ],
+      numberOfFloors: { type: Number, required: true },
     },
     {
       timestamps: true,

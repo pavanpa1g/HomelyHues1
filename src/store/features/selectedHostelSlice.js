@@ -1,13 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+const initialState = {
+  address: {
+    street: "",
+    city: "",
+    district: "",
+    state: "",
+    postalCode: "",
+    coords: {
+      latitude: "",
+      longitude: "",
+    },
+  },
+  contactNumber: "",
+  foodMenu: "",
+  hostelName: "",
+  image: "",
+  numberOfRooms: "",
+  roomTypes: [],
+  owner: "",
+};
 
 const selectedHostelSlice = createSlice({
   name: "selectedHostelSlice",
   initialState,
   reducers: {
     setSelectedHostel: (state, { payload }) => {
-      console.log("payload", payload);
       return { ...state, ...payload };
     },
   },
