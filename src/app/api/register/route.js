@@ -9,6 +9,7 @@ connectedDb();
 export async function POST(request) {
   const { name, email, password, role, phoneNumber } = await request.json();
   // console.log("request", await request.json());
+  console.log(name, email, password, role, phoneNumber);
   if (!name || !email || !password || role === undefined) {
     return NextResponse.json(
       { message: "Please fill all the fields" },

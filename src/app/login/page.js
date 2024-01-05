@@ -5,11 +5,16 @@ import Link from "next/link";
 import "./login.css";
 import Image from "next/image";
 import apiStatusConstants from "@/utils/apiconstants";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 function login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
+
+  const router = useRouter();
+
   const onChangeEmail = (value) => {
     setEmail(value);
   };
@@ -35,7 +40,12 @@ function login() {
       if (response.ok) {
         const data = await response.json();
         console.log("data", data);
+
+        const { token } = data;
+        Cookies.set("jwt_token", token, { expires: 30 });
+        localStorage.setItem("userData", JSON.stringify(data));
         setApiStatus(apiStatusConstants.success);
+        router.replace("/");
       } else {
         const data = await response.json();
         console.log("error", data);

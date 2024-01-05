@@ -6,20 +6,27 @@ import { IoHeartCircle, IoHeartCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 
 import "./index.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSelectedHostel } from "@/store/features/selectedHostelSlice";
+import { addToWishlist } from "@/store/features/wishListSlice";
 
 const HostelItem = ({ item }) => {
   const { owner, hostelName, address, contactNumber, foodMenu, image } = item;
   const { street, city, district, state, coords } = address;
 
-  const [wishListed, setWishListed] = useState(false);
+  const wishlistSlice = useSelector((state) => state.wishListSlice);
+
   //   href={`/hostel/${item._id}`}
 
   const dispatch = useDispatch();
 
-  const handleHostel = () => {
-    dispatch(setSelectedHostel(item));
+  const handleHostel = (e) => {
+    if (e.target.closest(".wishlist-container")) {
+      dispatch(addToWishlist(item));
+      e.preventDefault();
+    } else {
+      dispatch(setSelectedHostel(item));
+    }
   };
 
   // query: { ...item, ...address, ...coords },
@@ -56,9 +63,9 @@ const HostelItem = ({ item }) => {
       </div>
       <button
         className="wishlist-container"
-        onClick={() => setWishListed(!wishListed)}
+        // onClick={() => setWishListed(!wishListed)}
       >
-        {wishListed ? (
+        {wishlistSlice.some((card) => card._id == item._id) ? (
           <IoHeartCircle className="wishlist-icon " />
         ) : (
           <IoHeartCircleOutline className="wishlist-icon not-select " />

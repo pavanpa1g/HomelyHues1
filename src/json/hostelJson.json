@@ -1,6 +1,6 @@
 [
   {
-    "_id": "655f1cd1ea7129899a27cd20",
+    "_id": "60a1f4d08346ab912c8586e5",
     "hostelName": "Green Valley Hostel",
     "image": "https://th.bing.com/th/id/R.24545f0ff472c18da3fb83c3989ee819?rik=pXTZTHPl0lIOAw&riu=http%3a%2f%2finteriordesignermagazine.co.uk%2fwp-content%2fuploads%2f2018%2f10%2fHostel-online-1.jpg&ehk=sJYYnehf4UG3%2bEfm%2fYbjavCRLSwYA6w4DqF6ZpotjY0%3d&risl=&pid=ImgRaw&r=0",
     "address": {
@@ -40,10 +40,76 @@
         "id": 3,
         "selected": true
       }
+    ],
+    "numberOfFloors": 3,
+    "floorDetails": [
+      {
+        "floorNo": 1,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 3
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 0
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      },
+      {
+        "floorNo": 2,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 0
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      },
+      {
+        "floorNo": 3,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      }
     ]
   },
   {
-    "_id": "655f1cd1ea7129899a27cd20",
+    "_id": "655f1cd1ea7129899a27cd2iu",
     "hostelName": "Blue Horizon Hostel",
     "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
     "address": {
@@ -83,10 +149,76 @@
         "id": 3,
         "selected": true
       }
+    ],
+    "numberOfFloors": 3,
+    "floorDetails": [
+      {
+        "floorNo": 1,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 0
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      },
+      {
+        "floorNo": 2,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 0
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      },
+      {
+        "floorNo": 3,
+        "types": [
+          {
+            "type": "single",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Double",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "Triple",
+            "numberOfRooms": 1
+          },
+          {
+            "type": "quadruple",
+            "numberOfRooms": 1
+          }
+        ]
+      }
     ]
   },
   {
-    "_id": "655f1cd1ea7129899a27cd20",
+    "_id": "655f1cd1ea712dnmn9899a27cd20",
     "hostelName": "Hostel C",
     "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
     "address": {
@@ -102,8 +234,7 @@
     },
     "foodMenu": "both",
     "contactNumber": "5555555555",
-    "owner": "Robert Johnson"
-    ,
+    "owner": "Robert Johnson",
     "numberOfRooms": 10,
     "roomTypes": [
       {
@@ -127,10 +258,40 @@
         "id": 3,
         "selected": true
       }
+    ],
+    "numberOfFloors": 3,
+    "floorDetails": [
+      {
+        "floorNo": 1,
+        "types": {
+          "single": 1,
+          "double": 0,
+          "triple": 2,
+          "four": 1
+        }
+      },
+      {
+        "floorNo": 2,
+        "types": {
+          "single": 0,
+          "double": 2,
+          "triple": 0,
+          "four": 1
+        }
+      },
+      {
+        "floorNo": 3,
+        "types": {
+          "single": 2,
+          "double": 1,
+          "triple": 0,
+          "four": 0
+        }
+      }
     ]
   },
   {
-    "_id": "655f1cd1ea7129899a27cd20",
+    "_id": "655f1cd1ea7129899a27ckld20",
     "hostelName": "Hostel D",
     "image": "https://q-xx.bstatic.com/xdata/images/hotel/max750/80023444.jpg?k=75698131061da0dc34c3de55e128bcd8477c5ffff63bb443b8655dace6caf58e&o=",
     "address": {
@@ -169,6 +330,18 @@
         "numberOfRooms": 5,
         "id": 3,
         "selected": true
+      }
+    ],
+    "numberOfFloors": 3,
+    "floorDetails": [
+      {
+        "floorNo": 1,
+        "types": {
+          "single": 3,
+          "double": 4,
+          "triple": 2,
+          "four": 1
+        }
       }
     ]
   },

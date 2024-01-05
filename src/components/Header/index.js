@@ -6,6 +6,7 @@ import { FiLogOut } from "react-icons/fi";
 import "./index.css";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const overlayStyles = {
   backgroundColor: "#f5f5f5",
@@ -20,7 +21,10 @@ const overlayStyles = {
 const Header = () => {
   const router = useRouter();
 
-  const onClickLogout = () => {};
+  const onClickLogout = () => {
+    localStorage.removeItem("userData");
+    Cookies.remove("jwt_token");
+  };
 
   const pathName = usePathname();
 

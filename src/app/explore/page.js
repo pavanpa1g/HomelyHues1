@@ -9,6 +9,8 @@ import Header from "@/components/Header";
 import apiStatusConstants from "@/utils/apiconstants";
 import toast from "react-hot-toast";
 import BottomNavBar from "@/components/BottomNavBar";
+import hostelJson from "@/json/hostelJson";
+import HostelItem from "@/components/HostelComponents/HostelItem";
 
 const exampleData = [
   { id: 1, value: "Men's Hostel" },
@@ -16,19 +18,40 @@ const exampleData = [
   { id: 3, value: "PG Hostel" },
 ];
 
+const Results = ({ searchResults }) => {
+  console.log(searchResults);
+  return (
+    <div className="mt-3">
+      {searchResults.map((item) => (
+        <HostelItem key={item._id} item={item} />
+      ))}
+    </div>
+  );
+};
+
 const Explore = () => {
   const [search, setSearch] = useState("");
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
   const [searchList, setSearchList] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
+    if (!search) return;
+
+    const result = hostelJson.filter((item) =>
+      item.hostelName.toLowerCase().includes(search.toLowerCase())
+    );
+
+    setSearchResults(result);
+    return;
     setApiStatus(apiStatusConstants.progress);
 
     try {
       const response = await fetch(`/api/hostel/search?search=${search}`);
       if (response.ok) {
         const data = await response.json();
+        console.log("search results", data);
         setSearchList(data);
         setApiStatus(apiStatusConstants.success);
       } else {
@@ -41,17 +64,25 @@ const Explore = () => {
       setApiStatus(apiStatusConstants.failure);
     }
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="explore-bg-container">
       <Header />
       <div className="search-top-container">
-        <form className="search-container" onSubmit={handleSearch}>
+        <div className="search-container">
           <input
             type="search"
             value={search}
             className="search-input-search"
             // placeholder="Search Hostels"
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
             autoFocus
             required
           />
@@ -69,7 +100,7 @@ const Explore = () => {
               ))}
             </label>
           )}
-        </form>
+        </div>
 
         <ul className="search-ul">
           {exampleData.map((item) => (
@@ -82,6 +113,8 @@ const Explore = () => {
             </li>
           ))}
         </ul>
+
+        <Results searchResults={searchResults} />
       </div>
       <BottomNavBar />
     </div>

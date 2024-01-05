@@ -3,16 +3,60 @@ import React, { useState } from "react";
 import Input from "@/components/InputComponents/Input";
 import Link from "next/link";
 import "./signup.css";
+import { useDispatch, useSelector } from "react-redux";
+import { userRegisterThunk } from "@/store/features/userSlice";
+import apiStatusConstants from "@/utils/apiconstants";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 function signup() {
   const [username, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNum, setMobileNum] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setErrMsg] = useState(true);
-  const handleLogin = (event) => {
+  const [error, setErrMsg] = useState("");
+
+  const router = useRouter();
+
+  const handleLogin = async (event) => {
     event.preventDefault();
-    setErrMsg(!error);
+
+    const data = {
+      name: username,
+      email,
+      phoneNumber: mobileNum,
+      password,
+      role: false,
+    };
+
+    const url = "/api/register";
+
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(data),
+    };
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
+        const data = await response.json();
+
+        Cookies.set("jwt_token", data.token, { expires: 30 });
+        localStorage.setItem("userData", JSON.stringify(data));
+        toast.success("Successfully Signed Up!");
+        router.replace("/");
+      } else {
+        const data = await response.json();
+        toast.error(data.message);
+        console.log(response);
+      }
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
   };
   const onChangeUsername = (value) => {
     setUser(value);
@@ -73,7 +117,7 @@ function signup() {
           </label>
           <input type="radio" id="user" name="type" required />
           <label htmlFor="user">User</label>
-          {error && <p className="error m-0">Error</p>}
+          {error && <p className="error m-0">{error}</p>}
           <button className={`login-button ${error && "error-msg"}`}>
             Sign Up
           </button>
