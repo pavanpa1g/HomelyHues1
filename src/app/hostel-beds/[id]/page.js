@@ -99,7 +99,7 @@ import { setSelectedHostel } from "@/store/features/selectedHostelSlice";
 import apiStatusConstants from "@/utils/apiconstants";
 import RoomDetails from "@/components/RoomDetails/RoomDetails";
 
-const page = (props) => {
+const Page = (props) => {
   const { id } = props.params;
 
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
@@ -306,4 +306,4 @@ const page = (props) => {
   );
 };
 
-export default page;
+export default Page;

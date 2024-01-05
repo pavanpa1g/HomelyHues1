@@ -8,7 +8,7 @@ import apiStatusConstants from "@/utils/apiconstants";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
@@ -97,4 +97,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
