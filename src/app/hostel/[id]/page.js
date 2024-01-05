@@ -63,6 +63,10 @@ const HostelDetailsPage = (props) => {
     if (selectedHostelSelector.owner === "") {
       fetchHostelDetails();
     }
+
+    return () => {
+      console.log("done");
+    };
   }, []);
 
   const handleBeds = () => {

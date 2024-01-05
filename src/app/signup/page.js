@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
-function signup() {
+const signup = () => {
   const [username, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNum, setMobileNum] = useState("");
@@ -132,6 +132,6 @@ function signup() {
       </div>
     </form>
   );
-}
+};
 
 export default signup;

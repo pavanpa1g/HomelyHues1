@@ -196,6 +196,10 @@ const page = (props) => {
       console.log("clicked");
       fetchHostelDetails();
     }
+
+    return () => {
+      console.log("");
+    };
   }, []);
 
   return (
