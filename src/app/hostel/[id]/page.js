@@ -16,6 +16,7 @@ import FailureView from "@/components/FailureView/FailureView";
 
 import { IoBedOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const HostelDetailsPage = (props) => {
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
@@ -65,7 +66,8 @@ const HostelDetailsPage = (props) => {
   }, []);
 
   const handleBeds = () => {
-    router.push(`/hostel-beds/${id}`);
+    toast.success("Successfully Booked a Bed!");
+    // router.push(`/hostel-beds/${id}`);
   };
 
   const renderFailure = () => {

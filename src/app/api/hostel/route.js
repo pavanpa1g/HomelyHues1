@@ -17,20 +17,27 @@ export async function POST(request) {
     image,
     numberOfRooms,
     roomTypes,
+    numberOfFloors,
+    amenities,
+    floorDetails,
   } = hostelData;
+
   if (
     !owner ||
     !hostelName ||
     !address ||
     !contactNumber ||
     !numberOfRooms ||
-    !roomTypes
+    !roomTypes ||
+    !numberOfFloors
   ) {
     return NextResponse.json(
       { message: "Fill all the input fields" },
       { status: 401 }
     );
   }
+
+  return NextResponse.json({ floorDetails }, { status: 201 });
 
   try {
     // Check user role

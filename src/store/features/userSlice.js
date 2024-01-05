@@ -39,7 +39,7 @@ export const userSlice = createSlice({
         state.apiStatus = apiStatusConstants.progress;
       })
       .addCase(userRegisterThunk.fulfilled, (state, action) => {
-        console.log("acrion success", action);
+        console.log("action success", action);
         state.user = action.payload;
         state.apiStatus = apiStatusConstants.success;
       })

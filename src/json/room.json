@@ -1,0 +1,51 @@
+[
+  {
+    "_id":"60a1f4d086ab912c8586e5",
+    "hostel": "60a1f4d08346ab912c8586e5",
+    "roomNumber": 101,
+    "capacity": 2,
+    "occupiedBy": [
+      {
+        "user": "60a1f4d08346ab912c8586e6",
+        "booking": "60a1f4d08346ab912c8586e7"
+      },
+      {
+        "user": "60a1f4d08346ab912c8586e8",
+        "booking": "60a1f4d08346ab912c8586e9"
+      }
+    ],
+    "price": 1000,
+    "floorNumber": 1
+  },
+  {
+    "_id":"60a1f4d086ab12c856e5",
+    "hostel": "60a1f4d08346ab912c8586e5",
+    "roomNumber": 102,
+    "capacity": 3,
+    "occupiedBy": [
+      {
+        "user": "60a1f4d08346ab912c8586ea",
+        "booking": "60a1f4d08346ab912c8586eb"
+      },
+      {
+        "user": "60a1f4d08346ab912c8586ec",
+        "booking": "60a1f4d08346ab912c8586ed"
+      }
+    ],
+    "price": 1200,
+    "floorNumber": 1
+  },
+  {
+    "hostel": "60a1f4d08346ab912c8586e5",
+    "roomNumber": 103,
+    "capacity": 1,
+    "occupiedBy": [
+      {
+        "user": "60a1f4d08346ab912c8586ee",
+        "booking": "60a1f4d08346ab912c8586ef"
+      }
+    ],
+    "price": 800,
+    "floorNumber": 1
+  }
+]

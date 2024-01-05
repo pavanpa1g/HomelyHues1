@@ -1,7 +1,7 @@
 "use client";
 
 import BottomNavBar from "@/components/BottomNavBar";
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Modal from "react-modal";
 import "./page.css";
 
@@ -36,19 +36,57 @@ const data = [
   },
 ];
 
+const ProfileInput = ({ head, value, setter, disabled }) => {
+  return (
+    <div className="container">
+      <h1 className="side-heading">{head}</h1>
+
+      <input
+        className="answer"
+        type="text"
+        onChange={(event) => setter(event.target.value)}
+        value={value}
+        disabled={disabled}
+      />
+
+      <hr className="hr-line" />
+    </div>
+  );
+};
+
 const Profile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(profileImage);
   const [isUpdating, setIsUpdating] = useState(true);
-  const [userData, setUserData] = useState(data);
+  // const [userData, setUserData] = useState(data);
 
-  const handleInput = (id, event) => {
-    setUserData((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, value: event.target.value } : item
-      )
-    );
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [address, setAddress] = useState("");
+
+  const getUserDataFromLocalStorage = () => {
+    const userD = JSON.parse(localStorage.getItem("userData"));
+
+    setUserName(userD.name);
+    setEmail(userD.email);
+    setSelectedImage(userD.picture);
+    setPhone(userD.phone ? userD.phone : "");
+    setAddress(userD.address ? userD.address : "");
   };
+
+  useEffect(() => {
+    getUserDataFromLocalStorage();
+  }, []);
+
+  // const handleInput = (id, event) => {
+  //   setUserData((prev) =>
+  //     prev.map((item) =>
+  //       item.id === id ? { ...item, value: event.target.value } : item
+  //     )
+  //   );
+  // };
 
   const handleImageUpload = (event) => {
     // Handle the image upload logic here
@@ -105,7 +143,7 @@ const Profile = () => {
               Close
             </button>
           </Modal>
-          {userData.map((eachItem) => (
+          {/* {userData.map((eachItem) => (
             <div key={eachItem.id} className="container">
               <h1 className="side-heading">{eachItem.heading}</h1>
               {eachItem.heading === "Address" ? (
@@ -113,7 +151,7 @@ const Profile = () => {
                   className="answer"
                   type="text"
                   onChange={(event) => handleInput(eachItem.id, event)}
-                  value={eachItem.value}
+                  value={eachItem?.value}
                   disabled={isUpdating}
                 />
               ) : (
@@ -121,13 +159,44 @@ const Profile = () => {
                   className="answer"
                   type="text"
                   onChange={(event) => handleInput(eachItem.id, event)}
-                  value={eachItem.value}
+                  value={eachItem?.value}
                   disabled={isUpdating}
                 />
               )}
               <hr className="hr-line" />
             </div>
-          ))}
+          ))} */}
+
+          <ProfileInput
+            head="Username"
+            setter={setUserName}
+            value={username}
+            disabled={isUpdating}
+          />
+          <ProfileInput
+            head="Email"
+            setter={setEmail}
+            value={email}
+            disabled={isUpdating}
+          />
+          <ProfileInput
+            head="Phone"
+            setter={setPhone}
+            value={phone}
+            disabled={isUpdating}
+          />
+          <ProfileInput
+            head="Date of Birth"
+            setter={setDateOfBirth}
+            value={dateOfBirth}
+            disabled={isUpdating}
+          />
+          <ProfileInput
+            head="Address"
+            setter={setAddress}
+            value={address}
+            disabled={isUpdating}
+          />
         </div>
         <div style={{ textAlign: "center" }}>
           {isUpdating ? (

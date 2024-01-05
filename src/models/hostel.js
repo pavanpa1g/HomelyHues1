@@ -43,6 +43,26 @@ try {
         },
       ],
       numberOfFloors: { type: Number, required: true },
+      floorDetails: [
+        {
+          floorNumber: { type: Number, required: true },
+          roomTypes: [
+            {
+              type: {
+                type: String,
+                unique: true,
+                enum: ["Single", "Double", "Triple", "Four", "Five"],
+                required: true,
+              },
+              numberOfRooms: {
+                type: Number,
+                required: true,
+              },
+            },
+          ],
+        },
+      ],
+      amenities: [{ type: String }],
     },
     {
       timestamps: true,

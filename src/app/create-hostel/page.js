@@ -183,7 +183,11 @@ const CreateHostel = () => {
       image,
       numberOfRooms: parseInt(numberOfRooms),
       roomTypes: newRoomTypes,
+      numberOfFloors,
+      floorDetails: floorSharing,
     };
+
+    console.log("hostelData", hostelData);
 
     const options = {
       method: "POST",
@@ -196,10 +200,11 @@ const CreateHostel = () => {
       const response = await fetch("/api/hostel", options);
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("hostel_data", data);
-        setApiStatus(apiStatusConstants.success);
-        toast.success("Successfully toasted!");
-        router.back();
+        console.log("data", data);
+        // localStorage.setItem("hostel_data", data);
+        // setApiStatus(apiStatusConstants.success);
+        // toast.success("Successfully toasted!");
+        // router.back();
       } else {
         const data = await response.json();
         setErrorMsg(data.message);
@@ -258,6 +263,30 @@ const CreateHostel = () => {
     0
   );
 
+  function generateRoomDocuments(originalData) {
+    const roomsArray = [];
+    originalData.map((item) =>
+      item.roomTypes.map((type) => {
+        if (type.selected && type.type === "Single") {
+          for (let i = 0; i < type.numberOfRooms; i++) {
+            let newItem = {
+              hostel: "123",
+              roomNumber: parseInt(`${item.floorNumber}0${i + 1}`),
+              capacity: type.id,
+              price: 1000,
+              occupiedBy: [],
+              floorNumber: item.floorNumber,
+            };
+            roomsArray.push(newItem);
+          }
+        }
+      })
+    );
+    return roomsArray;
+  }
+
+  console.log("roomsArray", generateRoomDocuments(floorSharing));
+
   const numberOfRoomsEqualToTotalTypesOfRooms =
     parseInt(numberOfRooms) === totalNoOfRoomTypes;
 
@@ -299,6 +328,26 @@ const CreateHostel = () => {
   };
 
   console.log("floorSharing", floorSharing);
+
+  const handleFloorDetails = (value, floorNumber, roomItem) => {
+    // console.log("text", value);
+    setFloorSharing((prev) => {
+      return prev.map((floor) => {
+        if (floor.floorNumber === floorNumber) {
+          return {
+            ...floor,
+            roomTypes: floor.roomTypes.map((type) =>
+              type.type === roomItem.type
+                ? { ...type, numberOfRooms: value }
+                : type
+            ),
+          };
+        } else {
+          return floor;
+        }
+      });
+    });
+  };
 
   return (
     <div className="min-h-screen  bg-white">
@@ -523,17 +572,23 @@ const CreateHostel = () => {
                     floor {item.floorNumber}
                   </h1>
                   <div>
-                    {item.roomTypes.map((item, twoindex) => {
+                    {item.roomTypes.map((roomItem, twoindex) => {
                       return (
-                        item.selected && (
-                          <div key={item.floorNumber} className="flex">
+                        roomItem.selected && (
+                          <div key={roomItem.floorNumber} className="flex">
                             <p className="text-black room-type-text">
-                              {item.type}
+                              {roomItem.type}
                             </p>
                             <input
                               type="number"
                               // value={numberOfFloors === 0 ? "" : numberOfFloors}
-                              // onChange={(event) => handlePrice(item.id, event)}
+                              onChange={(event) =>
+                                handleFloorDetails(
+                                  parseInt(event.target.value),
+                                  item.floorNumber,
+                                  roomItem
+                                )
+                              }
                               className={`input-room-price mr-1 `}
                               placeholder="no of room"
                               // disabled={!item.selected}
