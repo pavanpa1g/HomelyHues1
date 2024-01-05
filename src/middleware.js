@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import * as jose from "jose";
 
 export async function middleware(request) {
   const authToken = request.cookies.get("jwt_token");
