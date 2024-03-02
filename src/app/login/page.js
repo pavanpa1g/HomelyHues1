@@ -12,8 +12,11 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const router = useRouter();
+
+  console.log("errorMsg", errorMsg);
 
   const onChangeEmail = (value) => {
     setEmail(value);
@@ -48,7 +51,8 @@ const Login = () => {
         router.replace("/");
       } else {
         const data = await response.json();
-        console.log("error", data);
+        console.log("error", data.message);
+        setErrorMsg(data.message);
         setApiStatus(apiStatusConstants.failure);
       }
     } catch (error) {
@@ -61,7 +65,7 @@ const Login = () => {
     <div className="bg-container">
       <form className="card-container" onSubmit={handleLogin}>
         <h1 className="login-heading">Login!</h1>
-        <Image src="" width={50} height={50} alt="logo" />
+        {/* <Image src="" width={50} height={50} alt="logo" /> */}
         <Input
           label="Email"
           placeholder="Enter Email"
@@ -78,12 +82,15 @@ const Login = () => {
           handleInputChange={onChangePassword}
           required={true}
         />
+        <p className="text-red-500 mt-0 mb-0 text-xs">{errorMsg}</p>
         <button
-          className="login-button"
+          className={`login-button
+            ${apiStatus == apiStatusConstants.failure && "mt-0"}
+          `}
           type="submit"
           disabled={apiStatus === apiStatusConstants.progress}
         >
-          Login
+          Login {apiStatus === apiStatusConstants.progress && "..."}
         </button>
         <p className="forgot-pass">Forgot Password</p>
         <p className="new-user">

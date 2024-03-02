@@ -17,10 +17,14 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [error, setErrMsg] = useState("");
 
+  const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
+
   const router = useRouter();
 
   const handleLogin = async (event) => {
     event.preventDefault();
+
+    setApiStatus(apiStatusConstants.progress);
 
     const data = {
       name: username,
@@ -57,6 +61,7 @@ const SignUp = () => {
       toast.error(error.message);
       console.log(error);
     }
+    setApiStatus(apiStatusConstants.initial);
   };
   const onChangeUsername = (value) => {
     setUser(value);
@@ -112,14 +117,16 @@ const SignUp = () => {
             required={true}
           />
           <input type="radio" id="provider" name="type" required />
-          <label htmlFor="provider" className="label-radio">
+          <label htmlFor="provider" className="label-radio text-black">
             Provider
           </label>
           <input type="radio" id="user" name="type" required />
-          <label htmlFor="user">User</label>
+          <label htmlFor="user" className="text-black">
+            User
+          </label>
           {error && <p className="error m-0">{error}</p>}
           <button className={`login-button ${error && "error-msg"}`}>
-            Sign Up
+            Sign Up{apiStatus == apiStatusConstants.progress && "..."}
           </button>
           <p className="forgot-pass">Forgot Password</p>
           <p className="new-user">
