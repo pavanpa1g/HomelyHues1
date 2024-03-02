@@ -24,7 +24,7 @@ const Header = () => {
   const onClickLogout = () => {
     localStorage.removeItem("userData");
     Cookies.remove("jwt_token");
-    router.replace("/");
+    router.replace("/login");
   };
 
   const pathName = usePathname();
